@@ -1,0 +1,4 @@
+﻿dataset,display_name,n_windows,n_channels,window_len_samples,window_len_sec,sampling_hz,sampling_hz_note,n_classes,class_counts,n_drivers,entity_unit,n_entities,n_recordings,test_frac,standardize_on_train
+UAH,UAH-DriveSet,2004,7,300,30.0,10.0,native,3,848|646|510,6,trip,40,40,0.425,False
+HAR,UCI HAR,10299,9,128,2.56,50.0,native,6,1722|1544|1406|1777|1906|1944,30,subject,30,400,0.33,False
+WISDM,WISDM 1.1,71574,3,45,2.25,20.0,mixed 20/25/50 Hz clocks; nominal 20 Hz for seconds,6,12643|12130|11543|11953|12179|11126,51,subject,51,307,0.33,True
