@@ -17,8 +17,8 @@ Official code, 56-study full-text audit table, and multi-dataset decoupling benc
 
 1. **`EntityGroupSplitter`** — Generates whole-entity holdout splits (`driver_id`, `trip_id`, `subject_id`), size-matched paired splits (`S1`, `S1-matched`, `S2-matched`, `S2`) to decouple pure leakage from sample-size confounding, and immutable SHA-256 JSON split manifests.
 2. **`LeakageAuditor`** — Automatically computes driver/trip/segment overlap and temporal-proximity leakage rates with `PASS` / `WARN` / `FAIL` verdicts.
-3. **`ICCDiagnostics`** — Quantifies within-client pseudoreplication via one-way random-effects $\mathrm{ICC}(1)$, Design Effect ($\mathrm{DEFF}$), effective independent sample size ($N_{\mathrm{eff}}$), and window-overlap decay curves.
-4. **`UnitLevelEvaluator`** — Reports window-, trip-, and entity-level mean/worst metrics alongside exact two-sided paired sign-flip tests, Holm–Bonferroni correction, and unweighted Cohen's $\kappa$.
+3. **`ICCDiagnostics`** — Quantifies within-client pseudoreplication via one-way random-effects ICC(1), Design Effect (DEFF), effective independent sample size (<i>N</i><sub>eff</sub>), and window-overlap decay curves.
+4. **`UnitLevelEvaluator`** — Reports window-, trip-, and entity-level mean/worst metrics alongside exact two-sided paired sign-flip tests, Holm–Bonferroni correction, and unweighted Cohen's κ.
 
 ---
 
@@ -65,11 +65,11 @@ python scripts/run_tier1_experiments.py --demo
 
 ## Summary of Main Empirical Findings
 
-| Benchmark | Holdout Regime (`S2`) | Metric | `S1-matched` | `S2-matched` | Pure Leakage ($\Delta_{\mathrm{leak}}$) | Sample-Size Confound ($\Delta_{\mathrm{size}}$) | $\mathrm{DEFF}$ (50% Overlap) |
+| Benchmark | Holdout Regime (`S2`) | Metric | `S1-matched` | `S2-matched` | Pure Leakage (Δ<sub>leak</sub>) | Sample-Size Confound (Δ<sub>size</sub>) | DEFF (50% Overlap) |
 | :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **UAH-DriveSet** (6 drivers, 40 trips) | Within-driver unseen trips | Trip-Vote Acc | 0.920 | 0.500 | **+0.420** | +0.020 | $17.2\times$ ($N_{\mathrm{eff}}$ = 5.82%) |
-| **UCI HAR** (30 subjects, 400 sessions) | Cross-subject unseen entities | Worst-Subject F1 | 0.816 | 0.734 | **+0.082** | -0.007 | $25.1\times$ ($N_{\mathrm{eff}}$ = 3.99%) |
-| **WISDM 1.1** (51 subjects, 307 segments) | Cross-subject unseen entities | Subject-Mean F1 | 0.916 | 0.557 | **+0.359** | -0.000 | $206.3\times$ ($N_{\mathrm{eff}}$ = 0.48%) |
+| **UAH-DriveSet** (6 drivers, 40 trips) | Within-driver unseen trips | Trip-Vote Acc | 0.920 | 0.500 | **+0.420** | +0.020 | 17.2× (<i>N</i><sub>eff</sub> = 5.82%) |
+| **UCI HAR** (30 subjects, 400 sessions) | Cross-subject unseen entities | Worst-Subject F1 | 0.816 | 0.734 | **+0.082** | -0.007 | 25.1× (<i>N</i><sub>eff</sub> = 3.99%) |
+| **WISDM 1.1** (51 subjects, 307 segments) | Cross-subject unseen entities | Subject-Mean F1 | 0.916 | 0.557 | **+0.359** | -0.000 | 206.3× (<i>N</i><sub>eff</sub> = 0.48%) |
 
 All raw per-seed CSV tables are included under `results/phase2_decoupling/`.
 
