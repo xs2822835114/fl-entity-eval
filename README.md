@@ -5,7 +5,7 @@
 
 Official software toolkit, 56-study English full-text audit table, size-matched leakage decoupling outputs, and federated scoring-protocol sensitivity benchmark accompanying:
 
-> **Evaluation Validity, Data Leakage, and Effective Sample Size in Federated Learning for Intelligent Driving: A Full-Text Audit, Decoupled Benchmark, and Open Toolkit**  
+> **Evaluation Validity and Data Leakage in Federated Learning for Intelligent Driving: An Audit, Benchmark, and Toolkit**  
 > Kehao Liu, Hongfei Guo*, Yulong Zhao  
 > *College of Intelligent Science and Technology, Inner Mongolia University of Technology, Hohhot, China*  
 > (*Corresponding author: `ghf-2005@163.com`)
@@ -156,7 +156,7 @@ All findings persist under a raw-unit bidirectional GRU backbone (`GRU1DNet`), u
 
 ```bibtex
 @article{liu2026flentityeval,
-  title   = {Evaluation Validity, Data Leakage, and Effective Sample Size in Federated Learning for Intelligent Driving: A Full-Text Audit, Decoupled Benchmark, and Open Toolkit},
+  title   = {Evaluation Validity and Data Leakage in Federated Learning for Intelligent Driving: An Audit, Benchmark, and Toolkit},
   author  = {Liu, Kehao and Guo, Hongfei and Zhao, Yulong},
   year    = {2026},
   note    = {Manuscript under review; software released under the MIT Licence},
