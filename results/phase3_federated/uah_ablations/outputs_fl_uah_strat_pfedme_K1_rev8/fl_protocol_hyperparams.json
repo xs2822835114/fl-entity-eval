@@ -1,0 +1,30 @@
+{
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "rounds": 30,
+  "local_epochs": 2,
+  "batch_size": 64,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "fedprox_mu": 0.01,
+  "pfedme_lam": 1.0,
+  "pfedme_K": 1,
+  "pfedme_lr_in": 0.001,
+  "pfedme_outer_step": 0.25,
+  "pfedme_beta": 1.0,
+  "ditto_lam": 0.1,
+  "s2_session_frac": 0.3,
+  "s1_window_frac": 0.2,
+  "fedper_split": "shared=[conv1,conv2,fc1], personal=[fc2]",
+  "fedper_uniform_head": "sample-weighted FedAvg of client fc2 heads",
+  "fedper_guard_mode": "support_masked_head_averaging",
+  "backbone": "cnn",
+  "split_mode": "stratified",
+  "drop_channels": []
+}

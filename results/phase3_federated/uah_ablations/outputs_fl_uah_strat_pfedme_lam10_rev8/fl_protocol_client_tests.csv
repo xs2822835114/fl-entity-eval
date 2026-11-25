@@ -1,0 +1,2 @@
+dataset,split_mode,backbone,ditto_lam,n_clients,method,mean_diff_vs_FedAvg_s2_trip_dep,sd_diff,exact_p,holm_bonferroni_p,holm_alpha_005_pass,mean_diff_seen_cls_only,exact_p_seen_cls_only
+UAH,stratified,cnn,0.1,6,pFedMe,-0.12499999999999999,0.10206207261596575,0.0625,0.0625,False,-0.12499999999999999,0.0625

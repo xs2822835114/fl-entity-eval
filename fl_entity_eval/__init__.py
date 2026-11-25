@@ -5,7 +5,15 @@ from .evaluator import (
     UnitLevelEvaluator,
     cohen_kappa,
     exact_paired_sign_flip_test,
+    fixed_macro_f1,
     holm_bonferroni,
+    present_class_macro_f1,
+)
+from .adapters import (
+    FlowerEntityPartitioner,
+    make_pytorch_subsets,
+    support_masked_head_avg,
+    train_only_standardize,
 )
 
 __all__ = [
@@ -15,5 +23,11 @@ __all__ = [
     "UnitLevelEvaluator",
     "cohen_kappa",
     "exact_paired_sign_flip_test",
+    "fixed_macro_f1",
     "holm_bonferroni",
+    "present_class_macro_f1",
+    "FlowerEntityPartitioner",
+    "make_pytorch_subsets",
+    "support_masked_head_avg",
+    "train_only_standardize",
 ]

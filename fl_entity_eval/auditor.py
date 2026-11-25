@@ -15,6 +15,7 @@ class LeakageAuditor:
         trip_col: Optional[str] = None,
         time_col: Optional[str] = None,
         window_sec: float = 30.0,
+        inclusive: bool = False,
     ) -> Dict[str, object]:
         train_df = df.iloc[train_idx]
         test_df = df.iloc[test_idx]
@@ -53,7 +54,7 @@ class LeakageAuditor:
                 t_arr = tr_times_by_trip.get(row[trip_col])
                 if t_arr is not None and len(t_arr) > 0:
                     dist = np.min(np.abs(t_arr - float(row[time_col])))
-                    if dist <= window_sec:
+                    if (dist <= window_sec) if inclusive else (dist < window_sec - 1e-9):
                         prox_hits += 1
             report["temporal_proximity_hits"] = int(prox_hits)
             report["temporal_proximity_leak_rate"] = float(prox_hits / n_test) if n_test else 0.0

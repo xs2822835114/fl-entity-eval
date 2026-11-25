@@ -11,5 +11,10 @@ license = {text = "MIT"}
 requires-python = ">=3.9"
 dependencies = ["numpy>=1.22", "pandas>=1.5"]
 
+[project.optional-dependencies]
+torch = ["torch>=2.0"]
+experiments = ["torch>=2.0", "matplotlib>=3.7", "scipy>=1.10"]
+flower = ["flwr>=1.8"]
+
 [tool.setuptools.packages.find]
 include = ["fl_entity_eval*"]

@@ -1,0 +1,2 @@
+dataset,split_mode,backbone,ditto_lam,n_clients,method,mean_diff_vs_FedAvg_s2_trip_dep,sd_diff,exact_p,holm_bonferroni_p,holm_alpha_005_pass,mean_diff_seen_cls_only,exact_p_seen_cls_only
+HAR,stratified,gru,0.1,30,FedPer,-0.15899470899470902,0.14829891720890256,4.9999750001249995e-06,4.9999750001249995e-06,True,-0.15899470899470902,4.9999750001249995e-06
